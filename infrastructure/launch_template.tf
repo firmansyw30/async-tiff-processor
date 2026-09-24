@@ -78,7 +78,7 @@ resource "aws_launch_template" "sqs_worker" {
   tag_specifications {
     resource_type = "instance"
     tags = {
-      Name    = "hki-sqs-worker"
+      Name    = "sqs-worker"
       Owner   = var.owner_tag
       Project = var.project_tag
     }
