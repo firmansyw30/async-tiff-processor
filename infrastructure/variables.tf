@@ -45,22 +45,22 @@ variable "instance_types" {
   ]
 }
 
-variable "mapid_bucket_name" {
+variable "tiff_bucket_name" {
   description = "Public bucket receiving TIFF uploads under the tiff/ prefix"
   type        = string
-  default     = "hki-mapid"
+  default     = "tiff-bucket"
 }
 
 variable "source_bucket_name" {
   description = "Private bucket holding the worker source code (worker.js, package.json)"
   type        = string
-  default     = "hki-worker-source-code-392987323540-ap-southeast-3-an"
+  default     = "tiff-worker-source-code-392987323540-ap-southeast-3-an"
 }
 
 variable "queue_name" {
   description = "SQS queue that receives S3 upload events"
   type        = string
-  default     = "hki-upload-file-queue"
+  default     = "tiff-upload-file-queue"
 }
 
 variable "queue_visibility_timeout" {
