@@ -1,4 +1,4 @@
-output "mapid_bucket" {
+output "tiff_bucket" {
   description = "Public bucket receiving TIFF uploads"
   value       = aws_s3_bucket.tiff_bucket.bucket
 }
@@ -10,12 +10,12 @@ output "source_code_bucket" {
 
 output "queue_url" {
   description = "SQS queue URL for the worker"
-  value       = aws_sqs_queue.hki_upload_file_queue.id
+  value       = aws_sqs_queue.tiff_queue_upload_file_queue.id
 }
 
 output "queue_arn" {
   description = "SQS queue ARN"
-  value       = aws_sqs_queue.hki_upload_file_queue.arn
+  value       = aws_sqs_queue.tiff_queue_upload_file_queue.arn
 }
 
 output "ecr_repository_url" {
@@ -30,12 +30,12 @@ output "worker_docker_image" {
 
 output "launch_template_id" {
   description = "Launch template ID"
-  value       = aws_launch_template.hki_sqs_worker.id
+  value       = aws_launch_template.sqs_worker.id
 }
 
 output "launch_template_latest_version" {
   description = "Latest launch template version used by the fleet"
-  value       = aws_launch_template.hki_sqs_worker.latest_version
+  value       = aws_launch_template.sqs_worker.latest_version
 }
 
 output "spot_fleet_request_id" {
