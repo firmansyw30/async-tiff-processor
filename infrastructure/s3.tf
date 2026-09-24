@@ -2,7 +2,7 @@
 # S3 — tiff-bucket (public upload bucket)
 # ─────────────────────────────────────────────────────────────
 resource "aws_s3_bucket" "tiff_bucket" {
-  bucket = var.mapid_bucket_name
+  bucket = var.tiff_bucket_name
 
   tags = {
     Name    = "tiff-bucket"
