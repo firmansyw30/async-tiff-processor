@@ -1,0 +1,10 @@
+region              = 
+vpc_id              = 
+subnet_ids          = 
+worker_ami          = 
+key_name            = 
+instance_types      = 
+tiff_bucket_name    = 
+source_bucket_name  = 
+queue_name          = 
+ecr_repository_name = 
