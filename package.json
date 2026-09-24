@@ -1,0 +1,31 @@
+{
+  "name": "async-tiff-processor",
+  "version": "1.0.0",
+  "description": "this repo is for integration with sqs also s3 then executing the python container worker",
+  "main": "worker.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/firmansyw30/async-tiff-processor.git"
+  },
+  "keywords": [
+    "tiff",
+    "gdal",
+    "sqs",
+    "s3"
+  ],
+  "author": "Firmansyah Wicaksono",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/firmansyw30/async-tiff-processor/issues"
+  },
+  "homepage": "https://github.com/firmansyw30/async-tiff-processor#readme",
+  "type": "module",
+  "dependencies": {
+    "@aws-sdk/client-s3": "^3.1138.0",
+    "@aws-sdk/client-sqs": "^3.1138.0",
+    "dotenv": "^18.0.3"
+  }
+}
