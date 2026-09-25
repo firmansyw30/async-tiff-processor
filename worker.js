@@ -144,6 +144,15 @@ async function processQueue() {
       // If an error occurs (e.g., Docker crashes), the message is NOT deleted from SQS.
       // SQS will automatically retry it after the Visibility Timeout.
       // If the file is missing from S3, delete the SQS message to break the infinite loop
+      
+      // --- ADDED FIX: Always clean up local storage even if the worker crashes ---
+      console.log("Crash detected. Wiping local temp files to prevent disk leak...");
+      try {
+        execSync(`sudo rm -rf ${LOCAL_DIR}/*`);
+      } catch (cleanupError) {
+        console.error("Failed to clean temp directory:", cleanupError.message);
+      }
+      
       if (error.name === 'NoSuchKey') {
         console.log(`File ${key} no longer exists in S3. Deleting ghost message from SQS...`);
         try {
